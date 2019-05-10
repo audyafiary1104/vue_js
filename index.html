@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p v-if="show"><b>{{message}}</b></p>
+        <h1 v-else>Oh no 😢</h1>
+        <p>Result From {{int1}}+{{int2}} is {{result}}</p>
+        <button v-on:click="sumProcess(2)">Proccess</button>
+        <label>Kilometers</label>
+        <input type="text" v-model="parametes">
+        <label>meters</label>
+        <input type="text" v-model="meters" placeholder="meters"><br>
+        <label>V MODEl</label><br>
+        <textarea v-model="textarea"> </textarea><br>
+        <p> {{textarea}} </p>
+        <label>V MODEl Radio</label><br>
+        <input type="radio" v-model="radiobutton" value="option1">option1<br>
+        <input type="radio" v-model="radiobutton"value="option2">option2<br>
+        <br>
+        Your Choise {{radiobutton}}<br>
+        <label>V MODEl Select</label><br><br>
+       <select v-model="select" multiple>
+        <option value="" disabled>choise Progaming</option>    
+        <option value="javascript">javascript</option>
+        <option value="html">html</option>
+        <option value="php">php</option>
+        <option value="laravel">laravel</option>
+    </select>
+        <p><b>Your Progamming is {{select}}</b></p><br>
+        <ul>
+            <li v-for="sel in select">{{sel}}</li>
+        </ul>
+        <label>V MODEl Checkbox</label><br><br>
+        <label> javascript</label>
+        <input type="checkbox" value="javascript" v-model="checkbox">
+        <br>
+        <label> php</label>
+        <input type="checkbox" value="php" v-model="checkbox">
+        <br>
+        <label> html</label>
+        <input type="checkbox" value="html" v-model="checkbox">
+        <br>
+     You Selected {{checkbox}}
+     <ul>
+           <li v-for="cek in checkbox">{{cek}}</li>
+        </ul>
+
+        <img v-bind:src="imgfile">
+        <br>
+        <a v-bind:href="link">About page</a>
+        <br>
+        <p v-bind:style="{color:colorFont}">Red Font</p>
+    
+        <button v-on:click="button = 'this use v-on-Click'">Click</button>
+        <button @click="button = 'this is use @click'">Click Me use @click</button>
+        <button @click="alert">Alert</button>
+        <br>
+        {{button}}
+        <label for="">Press Enter Key</label>
+        <input
+        type="text"
+        v-on:keyup.enter="button = 'you pres enter key'">
+        <br>
+        <label for="">Press Any Key</label>
+        <input
+        @keyup.esc="esckey"
+        @keyup.space="spacekey"
+        @keyup.up="upkey"
+        @keyup.down="downkey"
+        @keyup.65="aKey">
+<ul>
+    <li v-for="(cek,index) in checkbox">
+        <button @click="remove(index)">x</button>
+        {{cek}}
+    </li>
+</ul>
+<button-counter></button-counter>
+
+<greeting></greeting>
+    </div>
+    <script src="assets/vendor/vue.js"></script>
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
